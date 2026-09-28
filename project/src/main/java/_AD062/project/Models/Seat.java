@@ -7,12 +7,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Hall {
+public class Seat {
     @Id
     @GeneratedValue
     Long Id;
-    String HallName;
-    int HallRows;
-    int HallColumns;
-    int Capacity;
+    String SeatNumber;
+    int SeatRow;
+    int SeatColumn;
+    Long HallId;
 }

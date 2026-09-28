@@ -1,7 +1,7 @@
 package _AD062.project.Services;
 
 import _AD062.project.Models.Hall;
-import _AD062.project.Repository.HallRespository;
+import _AD062.project.Repository.HallRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class HallServices {
 
     @Autowired
-    private HallRespository hallRespository;
+    private HallRepository hallRespository;
 
     public List<Hall> getallhall() {
         return hallRespository.findAll();
@@ -28,5 +28,12 @@ public class HallServices {
     public Hall getbyid(long id) {
         return hallRespository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Hall not found"));
+    }
+
+    public void deletebyid(long id) {
+        Hall data = hallRespository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Hall not found"));
+
+        hallRespository.delete(data);
     }
 }

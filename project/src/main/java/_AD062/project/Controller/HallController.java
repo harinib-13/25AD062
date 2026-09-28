@@ -45,4 +45,14 @@ public class HallController {
     String getbyIdParam(@RequestParam long i) {
         return "hall with id " + i;
     }
+
+    @DeleteMapping("/delete/{id}")
+    ResponseEntity<?> deletebyid(@PathVariable long id) {
+        try {
+            hallServices.deletebyid(id);
+            return new ResponseEntity<>("Hall deleted successfully", HttpStatus.OK);
+        } catch (RuntimeException exception) {
+            return new ResponseEntity<>("Hall not found", HttpStatus.NOT_FOUND);
+        }
+    }
 }
