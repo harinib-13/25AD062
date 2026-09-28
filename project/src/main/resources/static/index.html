@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ExamFlow | Examination Management</title>
+
+    <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+    >
+
+    <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+    >
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    >
+
+    <link
+            rel="stylesheet"
+            href="style.css"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🎓
+        </div>
+
+        <div class="brand-text">
+            <strong>ExamFlow</strong>
+            <span>Examination Management</span>
+        </div>
+
+    </div>
+
+
+    <div class="sidebar-line"></div>
+
+
+    <div class="nav-heading">
+        MAIN MENU
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+                href="#"
+                class="nav-item active"
+                data-module="dashboard"
+        >
+            <span class="nav-icon">◉</span>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+                href="#"
+                class="nav-item"
+                data-module="examsessions"
+        >
+            <span class="nav-icon">▣</span>
+            <span>Exam Sessions</span>
+        </a>
+
+
+        <a
+                href="#"
+                class="nav-item"
+                data-module="halls"
+        >
+            <span class="nav-icon">▦</span>
+            <span>Examination Halls</span>
+        </a>
+
+
+        <a
+                href="#"
+                class="nav-item"
+                data-module="seats"
+        >
+            <span class="nav-icon">⌘</span>
+            <span>Seat Management</span>
+        </a>
+
+
+        <a
+                href="#"
+                class="nav-item"
+                data-module="students"
+        >
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="server-card">
+
+            <span class="server-dot"></span>
+
+            <div>
+                <strong>System Online</strong>
+                <small>Spring Boot API</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="top-title">
+
+            <h1>Examination Operations</h1>
+
+            <p>ExamFlow Management System</p>
+
+        </div>
+
+
+        <div class="top-right">
+
+            <div
+                    class="api-status"
+                    id="apiStatus"
+            >
+                <span class="status-dot"></span>
+                Checking API...
+            </div>
+
+
+            <div class="user-avatar">
+                👤
+            </div>
+
+
+            <div class="user-info">
+
+                <strong>Administrator</strong>
+
+                <span>Exam Cell</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+
+    <section class="content">
+
+        <div id="page"></div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+        class="modal-overlay"
+        id="modal"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Record
+                </h2>
+
+                <p id="modalDescription">
+                    Enter the details.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="close"
+                    id="closeModal"
+                    type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="recordForm">
+
+            <div
+                    class="form-grid"
+                    id="formFields"
+            ></div>
+
+
+            <div class="modal-footer">
+
+                <button
+                        type="button"
+                        class="btn secondary"
+                        id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                        type="submit"
+                        class="btn primary"
+                        id="saveBtn"
+                >
+                    ✓ Save Record
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+        class="toast-container"
+        id="toasts"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
